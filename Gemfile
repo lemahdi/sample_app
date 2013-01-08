@@ -1,15 +1,12 @@
 source 'https://rubygems.org'
 
 gem 'rails', '3.2.10'
+gem 'pg', '0.12.2'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
-# include sqlite only in a development environment
-# which prevents potential conflicts with the database
-# used by Heroku
 group :development do
-  gem 'sqlite3', '1.3.5'
   gem 'rspec-rails', '2.11.0'
 end
 
@@ -32,9 +29,6 @@ group :test do
   gem 'capybara', '1.1.2'
 end
 
-group :production do
-  gem 'pg', '0.12.2'
-end
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
