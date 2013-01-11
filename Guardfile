@@ -3,7 +3,7 @@
 
 require 'active_support/core_ext'
 
-guard 'rspec', :version => 2, :all_after_pass => false do
+guard 'rspec', :version => 2, :all_after_pass => false, :cli => '--drb' do
   watch(%r{^spec/.+_spec\.rb$})
   watch(%r{^lib/(.+)\.rb$})     { |m| "spec/lib/#{m[1]}_spec.rb" }
   watch('spec/spec_helper.rb')  { "spec" }
@@ -35,4 +35,5 @@ guard 'spork', :cucumber_env => { 'RAILS_ENV' => 'test' }, :rspec_env => { 'RAIL
   watch('spec/spec_helper.rb') { :rspec }
   watch('test/test_helper.rb') { :test_unit }
   watch(%r{features/support/}) { :cucumber }
+  watch('spec/support/')
 end
