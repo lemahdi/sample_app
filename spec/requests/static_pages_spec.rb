@@ -4,6 +4,8 @@ describe "StaticPages" do
 
   let(:base_title) { "Ruby on Rails Tutorial Sample App" }
 
+  subject {page }
+
   describe "Home Page" do
     before { visit root_path }
 
