@@ -16,7 +16,7 @@ class UsersController < ApplicationController
   end
 
   def create
-    unless signed_
+    unless signed_in?
       @user = User.new(params[:user])
       if @user.save
         sign_in @user
